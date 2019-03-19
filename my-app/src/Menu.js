@@ -6,7 +6,8 @@ class Menu extends Component {
   render() {
     return (
       <div className="Menu">
-        <BotaoMenu></BotaoMenu>
+        <BotaoMenu nome="HOME"></BotaoMenu>
+        <BotaoMenu nome="TESTE"></BotaoMenu>
       </div>
     );
   }
