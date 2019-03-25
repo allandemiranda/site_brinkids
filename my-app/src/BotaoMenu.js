@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import './BotaoMenu.css'
 
 class BotaoMenu extends Component {
-  render() {
+  render(props) {
     return (
-      <div className="BotaoMenu">
+      <div className="current_page_item  menu-item-simple-parent menu-item-depth-0 red">
         
       </div>
     );
