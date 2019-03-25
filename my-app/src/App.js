@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import './App.css'
-import Menu from './Menu'
+import Header from './Header'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Menu></Menu>
+      <div className='App'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
+        <Header></Header>
       </div>
     );
   }
