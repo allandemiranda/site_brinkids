@@ -1,13 +1,8 @@
 .Menu {
-    clear: both;
     float: left;
     width: 100%;
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 4px 2px -2px #CCCCCC;
-    -webkit-box-shadow: 0 4px 2px -2px #CCCCCC;
-    -moz-box-shadow: 0 4px 2px -2px #CCCCCC;
-    border-top: 5px solid #ebebeb;
+    height: 10%;
+    position: fixed;
     background: #FFFFFF;
-    height: 70px;
+    
 }
