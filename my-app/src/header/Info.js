@@ -2,20 +2,23 @@ import React, { Component } from 'react'
 
 class Info extends Component {
   render(props) {
-    return (
-      <div className='Info'>
-        <div className='Info-email'>
-            <p>{this.props.email}</p>
-            <i class="far fa-envelope"></i>
-        </div>
-        <div className='Info-telefones'>
-            <p>{this.props.telefone}</p>
-            <i class="fas fa-phone"></i>
-            <p>{this.props.whatsapp}</p>
-            <i class="fab fa-whatsapp"></i>
-        </div>
-      </div>
-    );
+    const divStyle = {
+      float: 'right',        
+      padding: '0px',
+      textAlign: 'right',
+      margin: '0px',
+      lineHeight: '0px'
+    }
+    return (      
+      <div style={divStyle}>
+        <p>
+          <p>{this.props.email} <i class="fas fa-envelope"></i></p>
+        </p>
+        <p>
+          <p>{this.props.telefone} <i class="fas fa-phone"></i>  {this.props.whatsapp} <i class="fab fa-whatsapp"></i>  </p>
+        </p>
+      </div>      
+    )
   }
 }
 

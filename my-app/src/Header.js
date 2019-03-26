@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
-import './Header.css'
 import Barra from './header/Barra'
+import Nav from './header/Nav'
 
 class Header extends Component {
   render() {
+    const styleDiv = {
+      width: '100%',
+      float: 'left',
+      margin: '0px',
+      padding: '0px',
+      backgroundColor: '#fff',
+      display: 'block',
+      color: '#008c99'
+    }
     return (
-      <div className='Header'>        
+      <div style={styleDiv}>        
         <Barra></Barra>
+        <Nav></Nav>
       </div>
-    );
+    )
   }
 }
 

@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 
 class Logo extends Component {
   render(props) {
+    const imgStyle = {
+      float: 'left'
+    }
     return (
-      <img src={this.props.src} alt='Logo BRINKIDS'></img>
-    );
+      <img style={imgStyle} src={this.props.src} alt='Logo BRINKIDS'></img>
+    )
   }
 }
 
