@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import './Botao.css'
 
 class Botao extends Component{
-    render(){
+    botaoCores = () => {
+        this.setState({
+            color: 'yellow'
+        })
+    }
+
+    render(){ 
         const liStyle = {
             padding: '0px',
             margin: '0px',
@@ -11,20 +17,7 @@ class Botao extends Component{
             position: 'relative',
             background: '#FFFFFF'
         }
-        const pStyleRed = {
-            color: 'red',
-            borderColor: '#f27b81',
-            paddingLeft: '10px',
-            display: 'block',
-            lineHeight: '65px',
-            position: 'relative',
-            marginTop: '-5px',
-            borderTop: '5px solid #ebebeb',
-            textDecoration: 'none',
-            listStyle: 'none',
-            borderTopColor: ''+this.props.cor+''
-        }
-        const pStyleBlack = {
+        const pStyle = {
             color: '#000',
             borderColor: '#f27b81',
             paddingLeft: '10px',
@@ -39,7 +32,11 @@ class Botao extends Component{
         }
         return(        
         <li style={liStyle}>
-            <p className='botao-teste'>HOME</p>
+            <p style={pStyle} 
+            onMouseOver={this.botaoCores}
+            >
+            HOME
+            </p>
         </li>        
         )
     }

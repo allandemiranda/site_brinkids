@@ -11,12 +11,12 @@ class Info extends Component {
     }
     return (      
       <div style={divStyle}>
-        <p>
-          <p>{this.props.email} <i class="fas fa-envelope"></i></p>
-        </p>
-        <p>
-          <p>{this.props.telefone} <i class="fas fa-phone"></i>  {this.props.whatsapp} <i class="fab fa-whatsapp"></i>  </p>
-        </p>
+        <div>
+          <p>{this.props.email} <i className="fas fa-envelope"></i></p>
+        </div>
+        <div>
+          <p>{this.props.telefone} <i className="fas fa-phone"></i>  {this.props.whatsapp} <i className="fab fa-whatsapp"></i>  </p>
+        </div>
       </div>      
     )
   }

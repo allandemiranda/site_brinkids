@@ -20,7 +20,7 @@ class Nav extends Component{
         return(
         <nav style={divNav}>
             <Menu></Menu>
-            <div ClassName='botao-direita'></div>
+            <div></div>
         </nav>
         )
     }
