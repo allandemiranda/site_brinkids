@@ -8,7 +8,8 @@ class Barra extends Component {
     const divStyle = {
       width: '1170px',
       margin: '0 auto', 
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      color: '#008c99'
     }
     return (
       <div style={divStyle}>

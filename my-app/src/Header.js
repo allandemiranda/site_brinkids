@@ -10,8 +10,7 @@ class Header extends Component {
       margin: '0px',
       padding: '0px',
       backgroundColor: '#fff',
-      display: 'block',
-      color: '#008c99'
+      display: 'block'
     }
     return (
       <div style={styleDiv}>        

@@ -1,26 +1,24 @@
 import React, { Component } from 'react'
 import Menu from './Menu'
+import Social from './Social'
 
 class Nav extends Component{
     render(){
         const divNav = {
+            height: '70px',
             clear: 'both',
-            float: 'left',
             width: '100%',
+            display: 'block',
+            float: 'left',
             position: 'relative',
             borderTop: '5px solid #ebebeb',
             background: '#FFFFFF',
-            height: '70px',            
-            margin: '0 auto',
-            boxSizing: 'border-box',
-            padding: '0px',                        
-            lineHeight: 'normal',
-            display: 'block'
+            margin: '0 auto'
         }
         return(
         <nav style={divNav}>
             <Menu></Menu>
-            <div></div>
+            <Social></Social>
         </nav>
         )
     }
