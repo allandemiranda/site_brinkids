@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './Header'
+import Main from './Main'
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
           crossOrigin="anonymous"></link>
         <Header></Header>
+        <Main></Main>
       </div>
     )
   }
