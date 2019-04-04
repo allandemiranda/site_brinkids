@@ -7,10 +7,7 @@ class Header extends Component {
     const styleDiv = {
       width: '100%',
       float: 'left',
-      margin: '0px',
-      padding: '0px',
-      backgroundColor: '#fff',
-      display: 'block'
+      backgroundColor: '#fff'
     }
     return (
       <div style={styleDiv}>        
