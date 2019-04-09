@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Main from './Main'
+import Rodape from './Rodape'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           crossOrigin="anonymous"></link>
         <Header></Header>
         <Main></Main>
+        <Rodape></Rodape>
       </div>
     )
   }

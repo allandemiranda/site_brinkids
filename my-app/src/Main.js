@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Slider from './main/Slider';
 import './main/Slideshow.css';
 import Produtos from './main/Produtos'
+import BrinkidsArea from './main/BrinkidsArea'
+import Contato from './main/Contato'
 
 const contentSlide = [
 	{
@@ -29,6 +31,8 @@ class Main extends Component{
                     ))}
                 </Slider>
                 <Produtos></Produtos>
+                <BrinkidsArea></BrinkidsArea>
+                <Contato></Contato>
             </main>
         )
     }
