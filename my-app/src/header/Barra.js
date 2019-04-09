@@ -6,7 +6,7 @@ import logoBrinkids from './img/logo.png'
 class Barra extends Component {
   render() {
     const divStyle = {
-      width: '1170px',
+      width: '88%',
       margin: '0 auto', 
       boxSizing: 'border-box',
       color: '#008c99'
