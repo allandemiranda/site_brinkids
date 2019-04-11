@@ -54,8 +54,8 @@ class Produtos extends Component{
             }
         ]
         const divProdutos = {
-            width: '100%',
-            margin: '5% 0px 0px'
+            marginLeft: '5%',
+            padding: '0px 0px 42% 0px'
         }
         return (
             <div id={'produtos-lista'} style={divProdutos}>

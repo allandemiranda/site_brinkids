@@ -4,7 +4,8 @@ class Produto extends Component{
     render(props){
         const divUm = {
             float: 'left',
-            width: '23.5%'
+            width: '23.5%',
+            margin: '2% 1% 0% 0%'
         }
         const divDois = {
             textAlign: 'center'            

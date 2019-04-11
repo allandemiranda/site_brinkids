@@ -5,20 +5,19 @@ import Produtos from './main/Produtos'
 import BrinkidsArea from './main/BrinkidsArea'
 import Contato from './main/Contato'
 
-const contentSlide = [
-	{
-		image: 'http://brinkidsonline.com.br/novosite/img/slide1.png'
-	},
-	{
-		image: 'http://brinkidsonline.com.br/novosite/img/slide2.png'
-	},
-	{
-		image: 'http://brinkidsonline.com.br/novosite/img/slide3.png'
-	}
-];
-
 class Main extends Component{
     render() {
+        const contentSlide = [
+            {
+                image: 'http://brinkidsonline.com.br/novosite/img/slide1.png'
+            },
+            {
+                image: 'http://brinkidsonline.com.br/novosite/img/slide2.png'
+            },
+            {
+                image: 'http://brinkidsonline.com.br/novosite/img/slide3.png'
+            }
+        ];
         return (
             <main>
                 <Slider autoplay={3000}>

@@ -1,17 +1,7 @@
 import React, { Component } from 'react'
 
 class BotaoAprenda extends Component{
-    render(){
-        const divUm = {
-            padding: '0px',
-            position: 'relative',
-            width: 'auto',
-            display: 'inline-block',
-            margin: '0px',
-            clear: 'both',
-            boxSizing: 'border-box'
-        }
-
+    render(props){        
         const h4Um = {
             color: '#fff',
             margin: '0px',
@@ -26,13 +16,16 @@ class BotaoAprenda extends Component{
         const iUm = {
             border: '3px solid #FFFFFF',
             backgroundColor: '#FFFFFF',
-            color: '#5c5c5c'
+            color: '#5c5c5c',
+            borderRadius: '100%',
+            padding: '5%',
+            marginRight: '15px'
         }
         return(
-            <div style={divUm}>
+            <div>
                 <h4 style={h4Um}>
-                    Criatividade
-                    <i className="fas fa-paint-brush" style={iUm}></i>
+                    <i className={this.props.icon} style={iUm}></i>
+                    {this.props.txt}                    
                 </h4>
             </div>
         )
