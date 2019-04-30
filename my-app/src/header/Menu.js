@@ -7,22 +7,26 @@ class Menu extends Component{
             {
                 id: 'botao-1',
                 cor: 'botao-vermelho',
-                txt: 'HOME'
+                txt: 'HOME',
+                rolar: ''
             },
             {
                 id: 'botao-2',
                 cor: 'botao-laranja',
-                txt: 'BRINKIDS'
+                txt: 'BRINKIDS',
+                rolar: 'produtos-lista'
             },
             {
                 id: 'botao-3',
                 cor: 'botao-verde',
-                txt: 'PROTUDOS'
+                txt: 'PROTUDOS',
+                rolar: 'areaBrinkidsDiv'
             },
             {
                 id: 'botao-4',
                 cor: 'botao-roza',
-                txt: 'CONTATO'
+                txt: 'CONTATO',
+                rolar: 'rodapeFinal'
             }
         ]
 
@@ -37,7 +41,7 @@ class Menu extends Component{
 
         return(
         <ul style={ulStyle}>        
-            {botaoMenuDados.map(dados => <Botao key={dados.id} cor={dados.cor} txt={dados.txt}></Botao>)}
+            {botaoMenuDados.map(dados => <Botao key={dados.id} cor={dados.cor} txt={dados.txt} rolarAte={dados.rolar}></Botao>)}
         </ul>
         )
     }

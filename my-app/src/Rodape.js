@@ -4,7 +4,7 @@ import DadosFinais from './footer/DadosFinais'
 class Rodape extends Component{
     render(){
         return(
-            <div>
+            <div id='rodapeFinal'>
                 <DadosFinais desenvolvedor={'ALLAN DE MIRANDA and CHIANC LEOCADIO'}></DadosFinais>
             </div>
         )

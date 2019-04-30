@@ -83,7 +83,7 @@ class BrinkidsArea extends Component{
         ];
 
         return(
-            <div style={divUm}>
+            <div id='areaBrinkidsDiv' style={divUm}>
                 <div style={divDois}>
                     <div style={divTres} id={'conteiner-texto'}>
                         <h2 style={h2Um}>Aprenda Brincando</h2>
