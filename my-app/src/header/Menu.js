@@ -8,25 +8,25 @@ class Menu extends Component{
                 id: 'botao-1',
                 cor: 'botao-vermelho',
                 txt: 'HOME',
-                rolar: ''
+                rolar: 0
             },
             {
                 id: 'botao-2',
                 cor: 'botao-laranja',
                 txt: 'BRINKIDS',
-                rolar: 'produtos-lista'
+                rolar: 1200
             },
             {
                 id: 'botao-3',
                 cor: 'botao-verde',
                 txt: 'PROTUDOS',
-                rolar: 'areaBrinkidsDiv'
+                rolar: 500
             },
             {
                 id: 'botao-4',
                 cor: 'botao-roza',
                 txt: 'CONTATO',
-                rolar: 'rodapeFinal'
+                rolar: 2000
             }
         ]
 

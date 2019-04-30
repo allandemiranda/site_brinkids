@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './Botao.css'
 
-class Botao extends Component{    
-    rolagem(props) {
-        // IMPLEMENTAR ROLAGEM AQUI
-        //window.location.href=props.rolarAte
-        console.log(props.rolarAte)
+class Botao extends Component{  
+    rolagem() {
+        //window.location.href='#' + this.props.rolarAte        
+        //('html, body').animate({ scrollTop: 200 }, 50);        
+        window.scrollTo({behavior: 'smooth', top: this.props.rolarAte})
     }  
     
     render(props){ 
@@ -20,7 +20,7 @@ class Botao extends Component{
         
         return(        
         <li style={liStyle}>
-            <p className={this.props.cor} onClick={this.rolagem}>{this.props.txt}</p>
+            <p className={this.props.cor} onClick={this.rolagem.bind(this)}>{this.props.txt}</p>
         </li>        
         )
     }
