@@ -15,10 +15,11 @@ class Nav extends Component{
             background: '#FFFFFF',
             margin: '0 auto'
         }
+
         return(
         <nav style={divNav}>
             <Menu></Menu>
-            <Social></Social>
+            <Social></Social>            
         </nav>
         )
     }

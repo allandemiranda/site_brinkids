@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import './Botao.css'
 
 class Botao extends Component{  
-    rolagem() {
-        //window.location.href='#' + this.props.rolarAte        
-        //('html, body').animate({ scrollTop: 200 }, 50);        
+    rolagem() {       
         window.scrollTo({behavior: 'smooth', top: this.props.rolarAte})
     }  
     
