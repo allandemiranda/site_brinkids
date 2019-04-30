@@ -87,11 +87,11 @@ class Contato extends Component{
                             <aside style={asideUm}>
                                 <h3 style={h3Um}>Horário de Funcionamento</h3>
                                 <div>
-                                    <i style={iUm} class="far fa-clock"></i>
+                                    <i style={iUm} className="far fa-clock"></i>
                                     <i> De Segunda a Sábado das 10h às 22h.</i> 
                                 </div>
                                 <div>
-                                    <i style={iUm} class="far fa-clock"></i>
+                                    <i style={iUm} className="far fa-clock"></i>
                                     <i> Domingo e feriados das 11h às 22h.</i>  
                                 </div>
                             </aside>

@@ -22,10 +22,10 @@ class Social extends Component{
         return(
         <ul style={ulStyle}>        
             <li style={liStyle}>
-                <p className='botao-facebook'><i class="fab fa-facebook"></i></p>
+                <p className='botao-facebook'><i className="fab fa-facebook"></i></p>
             </li>
             <li style={liStyle}>
-                <p className='botao-instagram'><i class="fab fa-instagram"></i></p>
+                <p className='botao-instagram'><i className="fab fa-instagram"></i></p>
             </li>
         </ul>
         )

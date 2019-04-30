@@ -47,11 +47,11 @@ class BrinkidsArea extends Component{
         }
 
         const divCinco = {
-            backgroundImage: 'url(http://brinkidsonline.com.br/novosite/img/add_bg.png)',
-            padding: '7% 10% 0px 8%',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            height: '400px'
+            // backgroundImage: 'url(http://brinkidsonline.com.br/novosite/img/add_bg.png)',
+            // padding: '7% 10% 0px 8%',
+            // backgroundSize: 'contain',
+            // backgroundRepeat: 'no-repeat',
+            // height: '400px'
         }
 
         const contentSlide = [
@@ -107,7 +107,10 @@ class BrinkidsArea extends Component{
                     <div style={divTres} id={'conteiner-fotos'}>
                         <h2 style={h2Um}>Os Melhores Momentos estão na Brinkids!</h2>
                         <div style={divCinco}>
-                            <div style={{maxWidth: '100%', maxHeight: '100%'}}>
+                            <div style={{position: 'absolute'}}>
+                            <img src={'http://brinkidsonline.com.br/novosite/img/add_bg.png'} alt='ipad'></img>
+                            </div>
+                            <div>
                                 <Slider autoplay={3000}>
                                     {contentSlide.map((item, index) => (
                                         <div
