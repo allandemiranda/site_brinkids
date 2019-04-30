@@ -47,11 +47,9 @@ class BrinkidsArea extends Component{
         }
 
         const divCinco = {
-            // backgroundImage: 'url(http://brinkidsonline.com.br/novosite/img/add_bg.png)',
-            // padding: '7% 10% 0px 8%',
-            // backgroundSize: 'contain',
-            // backgroundRepeat: 'no-repeat',
-            // height: '400px'
+            border: '50px solid transparent',
+            padding: '0px',
+            borderImage: 'url("http://brinkidsonline.com.br/novosite/img/add_bg.png") 8% round'
         }
 
         const contentSlide = [
@@ -105,23 +103,18 @@ class BrinkidsArea extends Component{
                         </div>
                     </div>
                     <div style={divTres} id={'conteiner-fotos'}>
-                        <h2 style={h2Um}>Os Melhores Momentos estão na Brinkids!</h2>
+                        <h2 style={h2Um}>Os Melhores Momentos estão na Brinkids!</h2>                                               
                         <div style={divCinco}>
-                            <div style={{position: 'absolute'}}>
-                            <img src={'http://brinkidsonline.com.br/novosite/img/add_bg.png'} alt='ipad'></img>
-                            </div>
-                            <div>
-                                <Slider autoplay={3000}>
-                                    {contentSlide.map((item, index) => (
-                                        <div
-                                            key={index}
-                                            style={{ background: `url('${item.image}') no-repeat center center`, backgroundSize: '100% 100%'}}
-                                        >                        
-                                        </div>
-                                    ))}
-                                </Slider>
-                            </div>
-                        </div>
+                            <Slider autoplay={3000}>
+                                {contentSlide.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        style={{ background: `url('${item.image}') no-repeat center center`, backgroundSize: '100% 100%'}}
+                                    >                        
+                                    </div>
+                                ))}
+                            </Slider>
+                        </div>                        
                     </div>
                 </div>
             </div>

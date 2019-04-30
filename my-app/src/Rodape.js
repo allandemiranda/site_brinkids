@@ -5,7 +5,7 @@ class Rodape extends Component{
     render(){
         return(
             <div>
-                <DadosFinais desenvolvedor={'ALLAN DE MIRANDA'}></DadosFinais>
+                <DadosFinais desenvolvedor={'ALLAN DE MIRANDA and CHIANC LEOCADIO'}></DadosFinais>
             </div>
         )
     }
