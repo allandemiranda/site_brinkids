@@ -1,3 +1,45 @@
+<?php
+include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
+protegePagina(); // Chama a função que protege a página
+?>
+<?php
+    $link = $status = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $link = test_input($_POST["link"]);
+    }
+    
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+    
+    if(($link == "") or ($link == "404")) {
+        $status = "0";
+    } else {   
+        $sql = "INSERT INTO slideshow (link) VALUES ('". $link ."')";
+
+        if (mysqli_query($_SG['link'], $sql)) {
+            $status = "1";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($_SG['link']);
+        }
+    }  
+
+?>
+<?php
+    if($_GET['id_link'] != ""){
+        $sql = "DELETE FROM slideshow WHERE id=".$_GET['id_link']."";
+
+        if (mysqli_query($_SG['link'], $sql)) {
+            $status = "2";
+        } else {
+            echo "Error deleting record: " . mysqli_error($_SG['link']);
+        }
+    }    
+?>
 <!DOCTYPE html>
 <html>
     <title>ADMIN BRINKIDS</title>
@@ -21,7 +63,7 @@
         <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
         <div class="w3-container w3-row">            
             <div class="w3-col s8 w3-bar">
-                <span>Bem Vindo, <strong>Mike</strong></span><br>
+                <span>Bem Vindo, <strong><?php echo $_SESSION['usuarioNome']; ?></strong></span><br>
                 <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
                 <a href="#" class="w3-bar-item w3-button"><i class="fas fa-power-off"></i></a>
             </div>
@@ -44,7 +86,23 @@
 
         <!-- !PAGE CONTENT! -->
         <div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
+        <?php
+            if($status = "1"){
+                echo '<div class="w3-panel w3-green">';
+                    echo '<p>Foto adicionada com sucesso.</p>';
+                echo '</div>';
+            }
+            if($status = "0"){
+                echo '<div class="w3-panel w3-red">';
+                    echo '<p>Digite um link válido.</p>';
+                echo '</div>';
+            }
+            if($status = "2"){
+                echo '<div class="w3-panel w3-green">';
+                    echo '<p>Foto deletada com sucesso.</p>';
+                echo '</div>';
+            }
+        ?>
             <!-- Header -->
             <header class="w3-container" style="padding-top:22px">
                 <h5><b><i class="fa fa-dashboard"></i> SlideShow</b></h5>
@@ -59,22 +117,22 @@
                                 <th>Link</th>
                                 <th></th>
                             </tr>
-                            <tr>
-                                <td>https://alksjdlalksld.asdasd/asdasd/asdasd/asd</td>
-                                <td><a href="#"><i class="far fa-trash-alt w3-text-red w3-large"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>https://alksjdlalksld.asdasd/asdasd/asdasd/asd</td>
-                                <td><a href="#"><i class="far fa-trash-alt w3-text-red w3-large"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>https://alksjdlalksld.asdasd/asdasd/asdasd/asd</td>
-                                <td><a href="#"><i class="far fa-trash-alt w3-text-red w3-large"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>https://alksjdlalksld.asdasd/asdasd/asdasd/asd</td>
-                                <td><a href="#"><i class="far fa-trash-alt w3-text-red w3-large"></i></a></td>
-                            </tr>
+                            <?php
+                                $sql = "SELECT id, link FROM slideshow";
+                                $result = mysqli_query($_SG['link'], $sql);
+                                
+                                if (mysqli_num_rows($result) > 0) {
+                                    // output data of each row
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>";
+                                            echo "<td>". $row["link"] ."</td>"; 
+                                            echo '<td><a href="'. $_SERVER['SCRIPT_URI'] .'?id_link='. $row["id"] .'"><i class="far fa-trash-alt w3-text-red w3-large"></i></a></td>'                                       
+                                        echo "</tr>"; 
+                                    }
+                                }
+                                
+                                mysqli_close($_SG['link']);
+                            ?> 
                         </table>
                     </div>
                 </div>
@@ -85,7 +143,7 @@
                     <div>
                         <h5>Adicionar Imagem</h5>
                         <div>
-                            <form>
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                 <p>Link: </p><input type="text" style="width: 100%;">
                                 <p><input type="button" value="Adicionar"></p>
                             </form>

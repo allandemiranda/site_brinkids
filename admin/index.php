@@ -1,3 +1,7 @@
+<?php
+include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
+protegePagina(); // Chama a função que protege a página
+?>
 <!DOCTYPE html>
 <html>
     <title>ADMIN BRINKIDS</title>
@@ -21,7 +25,7 @@
         <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
         <div class="w3-container w3-row">            
             <div class="w3-col s8 w3-bar">
-                <span>Bem Vindo, <strong>Mike</strong></span><br>
+                <span>Bem Vindo, <strong><?php echo $_SESSION['usuarioNome']; ?></strong></span><br>
                 <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
                 <a href="#" class="w3-bar-item w3-button"><i class="fas fa-power-off"></i></a>
             </div>
@@ -55,10 +59,23 @@
                     <div class="w3-container w3-orange w3-text-white w3-padding-16">
                         <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
                         <div class="w3-right">
-                        <h3>50</h3>
+                        <?php
+                            $sql = "SELECT id, nome, usuario FROM usuarios";
+                            $result = mysqli_query($_SG['link'], $sql);
+                            $contador = 0;
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    $contador++;
+                                }
+                            }
+                            
+                            mysqli_close($_SG['link']);
+                        ?>
+                        <h3><?php echo $contador; ?></h3>
                         </div>
                         <div class="w3-clear"></div>
-                        <h4>Users</h4>
+                        <h4>Usuários</h4>
                     </div>
                 </div>
             </div> 

@@ -72,13 +72,13 @@
         </style>
     </head>
         <body>  
-            <form class="modal-content animate" action="/action_page.php">  
+            <form class="modal-content animate" method="post" action="valida.php">  
                 <div class="container">
                     <label for="uname"><b>Usuário</b></label>
                     <input type="text" placeholder="Usuário" name="usuario" required>
                     <label for="psw"><b>Senha</b></label>
-                    <input type="password" placeholder="Senha" name="senha" required>                        
-                    <input type="submit" class="button" value="Entrar" />                    
+                    <input type="password" placeholder="Senha" name="senha" required>       
+                    <button type="submit" value="Entrar">Entrar</button>            
                 </div>                
             </form>  
     </body>
