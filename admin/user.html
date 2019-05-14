@@ -32,7 +32,7 @@
         </div>
         <div class="w3-bar-block">
             <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fas fa-tachometer-alt"></i>  Meu Dashboard</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fas fa-tachometer-alt"></i>  Meu Dashboard</a>
             <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Usuários</a>
             <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fab fa-slideshare"></i>  SlideShow</a>            
         </div>
@@ -47,22 +47,18 @@
 
             <!-- Header -->
             <header class="w3-container" style="padding-top:22px">
-                <h5><b><i class="fa fa-dashboard"></i> Meu Dashboard</b></h5>
+                <h5><b><i class="fa fa-dashboard"></i> Meu Usuário</b></h5>
             </header>
 
             <div class="w3-row-padding w3-margin-bottom">
                 <div class="w3-quarter">
-                    <div class="w3-container w3-orange w3-text-white w3-padding-16">
-                        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-                        <div class="w3-right">
-                        <h3>50</h3>
-                        </div>
-                        <div class="w3-clear"></div>
-                        <h4>Users</h4>
-                    </div>
-                </div>
-            </div> 
-            <!-- End page content -->
+                <form class="w3-container">
+                    <p>Nome: </p><input type="text">
+                    <p>Login: </p><input type="text">
+                    <p>Senha: </p><input type="password">
+                    <p><input type="button" value="Salvar"></p>
+                </form>
+            </div>
         </div>
 
         <script>
