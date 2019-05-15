@@ -1,12 +1,8 @@
 <?php
-if ($_GET['off'] != "true") {
-    // remove all session variables
-    session_unset();
-
-    // destroy the session
-    session_destroy();
-}
 include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
+if ($_GET['off'] == "true") {
+    expulsaVisitante();
+}
 protegePagina(); // Chama a função que protege a página
 ?>
 <?php
