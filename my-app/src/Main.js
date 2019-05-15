@@ -6,18 +6,24 @@ import BrinkidsArea from './main/BrinkidsArea'
 import Contato from './main/Contato'
 
 class Main extends Component{
+    constructor() {
+        super()
+        this.state = ({ db: [] })
+    }
+
+    componentDidMount() {
+        fetch("http://brinkidsonline.com.br/allan/admin/principal.php")
+            .then((response) => response.json())
+            .then((responseJson) => {
+                this.setState({
+                    db: responseJson
+                })
+                //console.log(this.state.db)
+            })
+    }
+
     render() {
-        const contentSlide = [
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/slide1.png'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/slide2.png'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/slide3.png'
-            }
-        ];
+        const contentSlide = this.state.db
         return (
             <main>
                 <Slider autoplay={3000}>

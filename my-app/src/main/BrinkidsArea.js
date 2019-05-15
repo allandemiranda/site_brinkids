@@ -1,9 +1,25 @@
 import React, { Component } from 'react'
-import BotaoAprenda  from './BotaoAprenda'
-import Slider from './Slider';
+import BotaoAprenda from './BotaoAprenda'
+import Slider from './Slider'
 
-class BrinkidsArea extends Component{
-    render(){
+class BrinkidsArea extends Component {
+    constructor() {
+        super()
+        this.state = ({ db: [] })
+    }
+
+    componentDidMount() {
+        fetch("http://brinkidsonline.com.br/allan/admin/secundario.php")
+            .then((response) => response.json())
+            .then((responseJson) => {
+                this.setState({
+                    db: responseJson
+                })
+                //console.log(this.state.db)
+            })
+    }
+
+    render() {
         const divUm = {
             backgroundPosition: '50% 35px',
             backgroundColor: '#008c99',
@@ -52,37 +68,9 @@ class BrinkidsArea extends Component{
             borderImage: 'url("http://brinkidsonline.com.br/novosite/img/add_bg.png") 8% round'
         }
 
-        const contentSlide = [
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/foto8.png'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/foto5.png'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/gal1.jpg'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/gal2.jpg'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/gal3.jpg'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/gal4.jpg'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/gal5.jpg'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/gal6.jpg'
-            },
-            {
-                image: 'http://brinkidsonline.com.br/novosite/img/gal7.jpg'
-            }
-        ];
+        const contentSlide = this.state.db
 
-        return(
+        return (
             <div id='areaBrinkidsDiv' style={divUm}>
                 <div style={divDois}>
                     <div style={divTres} id={'conteiner-texto'}>
@@ -103,18 +91,18 @@ class BrinkidsArea extends Component{
                         </div>
                     </div>
                     <div style={divTres} id={'conteiner-fotos'}>
-                        <h2 style={h2Um}>Os Melhores Momentos estão na Brinkids!</h2>                                               
+                        <h2 style={h2Um}>Os Melhores Momentos estão na Brinkids!</h2>
                         <div style={divCinco}>
                             <Slider autoplay={3000}>
                                 {contentSlide.map((item, index) => (
                                     <div
                                         key={index}
-                                        style={{ background: `url('${item.image}') no-repeat center center`, backgroundSize: '100% 100%'}}
-                                    >                        
+                                        style={{ background: `url('${item.image}') no-repeat center center`, backgroundSize: '100% 100%' }}
+                                    >
                                     </div>
                                 ))}
                             </Slider>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>

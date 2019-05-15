@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        $sql = "INSERT INTO slideshow (image) VALUES ('" . $link . "')";
+        $sql = "INSERT INTO fotos (image) VALUES ('" . $link . "')";
 
         if (mysqli_query($conn, $sql)) {
             $status = "1";
@@ -61,7 +61,7 @@ if ($_GET['id_link'] != "") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "DELETE FROM slideshow WHERE id=" . $_GET['id_link'] . "";
+    $sql = "DELETE FROM fotos WHERE id=" . $_GET['id_link'] . "";
 
     if (mysqli_query($conn, $sql)) {
         $status = "2";
@@ -73,7 +73,7 @@ if ($_GET['id_link'] != "") {
 }
 ?>
 <?php
-$pagina_atual_menu = "slideshow";
+$pagina_atual_menu = "fotos";
 include("menu.php");
 ?>
 <!-- !PAGE CONTENT! -->
@@ -81,7 +81,7 @@ include("menu.php");
     <?php
     if ($status == "1") {
         echo '<div class="w3-panel w3-green">';
-        echo '<p>SlideShow adicionada com sucesso.</p>';
+        echo '<p>Foto adicionada com sucesso.</p>';
         echo '</div>';
     }
     if ($status == "0") {
@@ -91,13 +91,13 @@ include("menu.php");
     }
     if ($status == "2") {
         echo '<div class="w3-panel w3-green">';
-        echo '<p>SlideShow deletada com sucesso.</p>';
+        echo '<p>Foto deletada com sucesso.</p>';
         echo '</div>';
     }
     ?>
     <!-- Header -->
     <header class="w3-container" style="padding-top:22px">
-        <h5><b><i class="fa fa-dashboard"></i> SlideShow</b></h5>
+        <h5><b><i class="fa fa-dashboard"></i> Fotos</b></h5>
     </header>
 
     <div class="w3-panel">
@@ -122,7 +122,7 @@ include("menu.php");
                         die("Connection failed: " . mysqli_connect_error());
                     }
 
-                    $sql = "SELECT id, image FROM slideshow";
+                    $sql = "SELECT id, image FROM fotos";
                     $result = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($result) > 0) {

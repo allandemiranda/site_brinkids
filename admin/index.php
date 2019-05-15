@@ -86,6 +86,40 @@ include("menu.php");
                 <h4>SlideShow</h4>
             </div>
         </div>
+        <div class="w3-quarter">
+            <div class="w3-container w3-blue w3-text-white w3-padding-16">
+                <div class="w3-left"><i class="fas fa-camera-retro w3-xxxlarge"></i></div>
+                <div class="w3-right">
+                    <?php
+                    $servername = "localhost";
+                    $username = "allan";
+                    $password = "sistemaufrn";
+                    $dbname = "web_imd";
+
+                    // Create connection
+                    $conn = mysqli_connect($servername, $username, $password, $dbname);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+                    $sql = "SELECT id FROM fotos";
+                    $result = mysqli_query($conn, $sql);
+                    $contador = 0;
+                    if (mysqli_num_rows($result) > 0) {
+                        // output data of each row
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $contador++;
+                        }
+                    }
+
+                    mysqli_close($conn);
+                    ?>
+                    <h3><?php echo $contador; ?></h3>
+                </div>
+                <div class="w3-clear"></div>
+                <h4>Fotos</h4>
+            </div>
+        </div>
     </div>
     <!-- End page content -->
 </div>

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import './Botao.css'
 
-class Botao extends Component{  
-    rolagem() {       
-        window.scrollTo({behavior: 'smooth', top: this.props.rolarAte})
-    }  
-    
-    render(props){ 
+class Botao extends Component {
+    rolagem() {
+        window.scrollTo({ behavior: 'smooth', top: this.props.rolarAte })
+    }
+
+    render(props) {
         const liStyle = {
             padding: '0px',
             margin: '0px',
@@ -15,11 +15,11 @@ class Botao extends Component{
             position: 'relative',
             background: '#FFFFFF'
         }
-        
-        return(        
-        <li style={liStyle}>
-            <p className={this.props.cor} onClick={this.rolagem.bind(this)}>{this.props.txt}</p>
-        </li>        
+
+        return (
+            <li style={liStyle}>
+                <p className={this.props.cor} onClick={this.rolagem.bind(this)}>{this.props.txt}</p>
+            </li>
         )
     }
 }

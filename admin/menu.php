@@ -52,6 +52,9 @@
             <a href="slideshow.php" class="w3-bar-item w3-button w3-padding <?php if ($pagina_atual_menu == "slideshow") {
                                                                                 echo "w3-blue";
                                                                             } ?>"><i class="fab fa-slideshare"></i> SlideShow</a>
+                                                                            <a href="fotos.php" class="w3-bar-item w3-button w3-padding <?php if ($pagina_atual_menu == "fotos") {
+                                                                                echo "w3-blue";
+                                                                            } ?>"><i class="fas fa-camera-retro"></i> Fotos</a>
         </div>
     </nav>
 
