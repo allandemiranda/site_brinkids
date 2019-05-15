@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "site_brinkids",
+  "version": "1.0.0",
+  "homepage": "http://brinkidsonline.com.br/allan/",
   "private": true,
   "dependencies": {
     "jquery": "^3.4.1",
