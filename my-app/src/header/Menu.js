@@ -19,7 +19,7 @@ class Menu extends Component{
             {
                 id: 'botao-3',
                 cor: 'botao-verde',
-                txt: 'PROTUDOS',
+                txt: 'PRODUTOS',
                 rolar: 500
             },
             {
