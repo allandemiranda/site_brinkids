@@ -1,5 +1,5 @@
 # Web Site BRINKIDS
 
-Em processo de desenvolvimetno
+Comcluído e aprovado.
 
 www.brinkidsonline.com.br
