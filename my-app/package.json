@@ -4,7 +4,7 @@
   "homepage": "http://brinkidsonline.com.br/allan/",
   "private": true,
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
